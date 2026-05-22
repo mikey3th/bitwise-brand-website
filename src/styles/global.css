@@ -1,0 +1,76 @@
+@font-face {
+    font-family: "Items";
+    src: url("/Items-Light.otf");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Items";
+    src: url("/Items-Thin.otf");
+    font-weight: 400;
+}
+
+
+@font-face {
+    font-family: "Items";
+    src: url("/Items-Regular.otf");
+    font-weight: 500;
+}
+
+
+@font-face {
+    font-family: "PP Neue Montreal";
+    src: url("/PPNeueMontreal-Light.otf");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "PP Neue Montreal";
+    src: url("/PPNeueMontreal-Book.otf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "PP Neue Montreal";
+    src: url("/PPNeueMontreal-Regular.otf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "PP Neue Montreal";
+    src: url("/PPNeueMontreal-Medium.otf");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "PP Neue Montreal";
+    src: url("/PPNeueMontreal-Bold.otf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "PP Neue Montreal Mono";
+    src: url("/PPNeueMontrealMono-Variable.otf");
+    font-weight: 100 900;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: #010203;
+    font-family: "PP Neue Montreal";
+    font-weight: 400;
+    font-size: 1.5rem;
+
+}
+
+h1{
+    font-family: "Items";
+    font-weight: 300;
+    font-size: 120px;
+}
