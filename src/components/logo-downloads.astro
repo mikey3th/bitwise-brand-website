@@ -1,0 +1,128 @@
+---
+
+import '../styles/global.css'
+import DownButton from '../components/down-button.astro'
+
+---
+
+
+<div>
+    <div class="brand-asets">
+        <div class="asset-row">
+
+            <div class="asset-and-buttons"> 
+
+                <div class="wordmark-logo">
+                    <img src="/bitwise-logo.svg" alt="Icon" />
+                </div>
+
+                <p class="paragraph-mono"> Bitwise Word-Mark dark </p>
+                        
+                <div class="download-row">      
+                    <a href="/bitwise-logo.svg" download="bitwise-logo.svg" class="download-button"> 
+                        <p> SVG </p>
+                        <DownButton/>
+                    </a>
+                    <a href="/bitwise-logo.svg" download="bitwise-logo.svg" class="download-button"> 
+                        <p> PNG </p>
+                        <DownButton/>
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="asset-and-buttons"> 
+
+                <div class="wordmark-logo">
+                    <img src="/bitwise-logo.svg" alt="Icon" />
+                </div>
+
+                <p class="paragraph-mono"> Bitwise Word-Mark dark </p>
+                        
+                <div class="download-row">      
+                    <a href="/bitwise-logo.svg" download="bitwise-logo.svg" class="download-button"> 
+                        <p> SVG </p>
+                        <DownButton/>
+                    </a>
+                    <a href="/bitwise-logo.svg" download="bitwise-logo.svg" class="download-button"> 
+                        <p> PNG </p>
+                        <DownButton/>
+                    </a>
+                </div>
+
+            </div>
+
+                        
+
+        </div>
+
+</div>
+</div>
+    
+        
+
+
+
+
+
+<style>
+
+    .asset-and-buttons{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: start;
+    }
+
+    .download-button{
+        display: flex;
+        width: fit-content;
+        padding: 10px 12px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.25rem;
+
+        border-radius: 5px;
+        border: 1px solid var(--line-gray);
+        background: var(--fill-gray);
+    }
+
+        .download-button:hover{
+            opacity: 0.6;
+
+        }
+
+
+    .logo-and-text{
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        align-items: center;
+        padding: 100px;
+    }
+
+    .asset-row{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .wordmark-logo{
+        width: 650px;
+        height: auto;
+        padding: 50px;
+        background: var(--fill-gray);
+        outline: 1px solid var(--line-gray);
+        outline-offset: -1px;
+    }
+
+    .download-row{
+        display: flex;
+        flex-direction: row;
+        gap: 2rem
+    }
+
+
+</style>

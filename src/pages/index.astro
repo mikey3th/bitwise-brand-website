@@ -1,5 +1,12 @@
 ---
+
 import IntroSection from "../components/intro-section.astro"
+import LogoSection from "../components/logo-section.astro"
+import PreHeader from "../components/pre-header.astro"
+import LogoDownload from "../components/logo-downloads.astro"
+
+
+
 ---
 
 <html lang="en">
@@ -11,7 +18,146 @@ import IntroSection from "../components/intro-section.astro"
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
+
 	<body>
-		<IntroSection />
+
+
+
+		<div class="page-wrapper"> 
+
+
+			<div class="grid-container">
+				<div class="vertical-borders left"> </div>
+				<div class="vertical-borders right"> </div>
+				<div class="no-background">
+					<PreHeader/>
+				</div>
+			</div>
+
+			<div class="grid-container">
+				<div class="horizontal-borders top"></div>
+				<div class="vertical-borders left"> </div>
+				<div class="vertical-borders right"> </div>
+				<div class="content">
+					<IntroSection/>
+				</div>
+			</div>
+		
+			<div class="grid-container">
+				<div class="horizontal-borders top"></div>
+				<div class="vertical-borders left"> </div>
+				<div class="vertical-borders right"> </div>
+				<div class="no-background">
+					<LogoSection/>
+				</div>
+			</div>
+
+			<div class="grid-container">
+				<div class="horizontal-borders top"></div>
+				<div class="vertical-borders left"> </div>
+				<div class="vertical-borders right"> </div>
+				<div class="no-background">
+					<LogoDownload/>
+				</div>
+			</div>
+
+		</div>
 	</body>
 </html>
+
+
+
+
+
+
+
+<style>
+
+/* CSS PAGE SPECIFIC START */
+
+.quick-links{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    background: rgba(0, 0, 0, 0.02);
+    backdrop-filter: blur(1px);
+    align-items: center;
+    border-top: 1px solid #D7DBDF;
+}
+
+.logo-and-text{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+}
+
+
+.vertical-line{
+    border-left: 1px solid #D7DBDF;
+    height: 120px;
+}
+
+/* CSS PAGE SPECIFIC END */
+
+
+
+
+
+
+/* --- GRID START --- */
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 150px auto 1fr auto 150px;
+    grid-template-rows: 0px auto 1fr auto 0px;
+    width: 100%;
+}
+
+
+.horizontal-borders.top {
+    grid-column: 1 / -1;
+    grid-row: 2;
+}
+
+
+.vertical-borders.left{
+    border-left: 1px solid #D7DBDF;
+    border-right: 1px solid #D7DBDF;
+    width: 40px;
+    grid-row: 2 / 5;
+    grid-column: 2;
+
+}
+
+
+.vertical-borders.right{
+    border-left: 1px solid #D7DBDF;
+    border-right: 1px solid #D7DBDF;
+    width: 40px;
+    grid-row: -5 / -2;
+    grid-column: 4;
+
+}
+
+
+.horizontal-borders.bottom {
+    grid-column: 2 / -2;
+    grid-row: 4;
+}
+
+
+.horizontal-borders{
+    border-bottom: 1px solid #D7DBDF;
+    border-top: 1px solid #D7DBDF;
+    height: 40px;
+    width: 100%;
+    grid-column: 1 / -1;
+
+}
+
+/* --- GRID END --- */
+
+
+</style>
