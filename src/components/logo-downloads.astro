@@ -7,11 +7,11 @@ import DownButton from '../components/down-button.astro'
 
 
 <div>
-    <div class="brand-asets">
+    <div class="brand-assets">
         <div class="asset-row">
 
+            {/* Dark Wordmark No R */}
             <div class="asset-and-buttons"> 
-
                 <div class="wordmark-logo">
                     <img src="/bitwise-logo.svg" alt="Icon" />
                 </div>
@@ -23,41 +23,134 @@ import DownButton from '../components/down-button.astro'
                         <p> SVG </p>
                         <DownButton/>
                     </a>
-                    <a href="/bitwise-logo.svg" download="bitwise-logo.svg" class="download-button"> 
+                    <a href="/bitwise-logo.png" download="bitwise-logo.svg" class="download-button"> 
                         <p> PNG </p>
                         <DownButton/>
                     </a>
                 </div>
-
             </div>
 
-
+            {/* Light Wordmark No R */}
             <div class="asset-and-buttons"> 
-
-                <div class="wordmark-logo">
-                    <img src="/bitwise-logo.svg" alt="Icon" />
+                <div class="wordmark-logo dark-bg">
+                    <img src="/bitwise-logo-light.svg" alt="Icon" />
                 </div>
 
-                <p class="paragraph-mono"> Bitwise Word-Mark dark </p>
+                <p class="paragraph-mono"> Bitwise Word-Mark Light </p>
                         
                 <div class="download-row">      
-                    <a href="/bitwise-logo.svg" download="bitwise-logo.svg" class="download-button"> 
+                    <a href="/bitwise-logo-light.svg" download="bitwise-logo-light.svg" class="download-button"> 
                         <p> SVG </p>
                         <DownButton/>
                     </a>
-                    <a href="/bitwise-logo.svg" download="bitwise-logo.svg" class="download-button"> 
+                    <a href="/bitwise-logo.svg" download="bitwise-logo-light.png" class="download-button"> 
                         <p> PNG </p>
                         <DownButton/>
                     </a>
                 </div>
-
             </div>
-
-                        
 
         </div>
 
-</div>
+        <hr>
+
+        <div class="asset-row">
+
+            {/* Dark Wordmark No R */}
+            <div class="asset-and-buttons"> 
+                <div class="wordmark-logo">
+                    <img src="/bitwise-logo-registration.svg" alt="Icon" />
+                </div>
+
+                <p class="paragraph-mono"> Bitwise Word-Mark Dark With Registration</p>
+                        
+                <div class="download-row">      
+                    <a href="/bitwise-logo-registration.svg" download="bitwise-logo.svg" class="download-button"> 
+                        <p> SVG </p>
+                        <DownButton/>
+                    </a>
+                    <a href="/bitwise-logo-registration.png" download="bitwise-logo.svg" class="download-button"> 
+                        <p> PNG </p>
+                        <DownButton/>
+                    </a>
+                </div>
+            </div>
+
+            {/* Light Wordmark No R */}
+            <div class="asset-and-buttons"> 
+                <div class="wordmark-logo dark-bg">
+                    <img src="/bitwise-logo-registration-light.svg" alt="Icon" />
+                </div>
+
+                <p class="paragraph-mono"> Bitwise Word-Mark Light </p>
+                        
+                <div class="download-row">      
+                    <a href="/bitwise-logo-registration-light.svg" download="bitwise-logo-light.svg" class="download-button"> 
+                        <p> SVG </p>
+                        <DownButton/>
+                    </a>
+                    <a href="/bitwise-registration-logo.png" download="bitwise-logo-light.png" class="download-button"> 
+                        <p> PNG </p>
+                        <DownButton/>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+
+        <hr>
+
+            {/* For the B Monogram */}
+
+            <div class="asset-row">
+
+            {/* Dark B Monogram */}
+            <div class="asset-and-buttons"> 
+                <div class="wordmark-logo">
+                    <img src= "/bitwise-monogram-dark.svg" alt="Icon"/>
+                </div>
+
+                <p class="paragraph-mono"> Bitwise Monogram Dark </p>
+                        
+                <div class="download-row">      
+                    <a href="/bitwise-monogram-dark.svg" download="bitwise-monogram-dark.svg" class="download-button"> 
+                        <p> SVG </p>
+                        <DownButton/>
+                    </a>
+                    <a href="/bitwise-monogram-dark.png" download="bitwise-monogram-dark.png" class="download-button"> 
+                        <p> PNG </p>
+                        <DownButton/>
+                    </a>
+                </div>
+            </div>
+
+            {/* Light B Monogram*/}
+            <div class="asset-and-buttons"> 
+                <div class="wordmark-logo dark-bg">
+                    <img src="/bitwise-monogram-light.svg" alt="Icon" />
+                </div>
+
+                <p class="paragraph-mono"> Bitwise Word-Mark Light </p>
+                        
+                <div class="download-row">      
+                    <a href="/bitwise-monogram-light.svg" download="bitwise-monogram-light.svg" class="download-button"> 
+                        <p> SVG </p>
+                        <DownButton/>
+                    </a>
+                    <a href="/bitwise-monogram-light.png" download="bitwise-monogram-light.png" class="download-button"> 
+                        <p> PNG </p>
+                        <DownButton/>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+
+        
+
+    </div>
 </div>
     
         
@@ -68,11 +161,18 @@ import DownButton from '../components/down-button.astro'
 
 <style>
 
+    .brand-assets{
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+
     .asset-and-buttons{
         display: flex;
         flex-direction: column;
         gap: 30px;
         align-items: start;
+        width: 100%;
     }
 
     .download-button{
@@ -89,10 +189,10 @@ import DownButton from '../components/down-button.astro'
         background: var(--fill-gray);
     }
 
-        .download-button:hover{
-            opacity: 0.6;
+    .download-button:hover{
+        opacity: 0.6;
 
-        }
+    }
 
 
     .logo-and-text{
@@ -107,21 +207,41 @@ import DownButton from '../components/down-button.astro'
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+        gap: 50px;
+        padding: 50px
     }
 
     .wordmark-logo{
-        width: 450px;
-        height: auto;
+        display: flex;
+        width: 100%;
         padding: 50px;
         background: var(--fill-gray);
         outline: 1px solid var(--line-gray);
         outline-offset: -1px;
+        max-height: 230px;
+        justify-content: center;
+    }
+
+    .wordmark-logo.dark-bg{
+        width: 100%;
+        height: auto;
+        padding: 50px;
+        background: #000;
+        outline: 1px solid var(--line-gray);
+        outline-offset: -1px;
+        max-height: 230px;
     }
 
     .download-row{
         display: flex;
         flex-direction: row;
         gap: 2rem
+    }
+
+    .wordmark-logo img {
+        max-height: 100%;
+        width: auto;
+        display: block;
     }
 
 

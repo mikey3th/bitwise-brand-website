@@ -1,0 +1,132 @@
+---
+
+import '../styles/global.css'
+import DownButton from '../components/down-button.astro'
+
+---
+
+
+<div>
+    <div class="type-assets">
+        <div class="type-row">
+
+            {/* PP Neue Montreal */}
+            <div class="asset-and-buttons"> 
+                <div class="type-specimen">
+                    
+                </div>
+
+                <p class="paragraph-mono"> Bitwise Word-Mark dark </p>
+                        
+                <div class="download-row">      
+                    <a href="/bitwise-logo.svg" download="bitwise-logo.svg" class="download-button"> 
+                        <p> SVG </p>
+                        <DownButton/>
+                    </a>
+                    <a href="/bitwise-logo.png" download="bitwise-logo.svg" class="download-button"> 
+                        <p> PNG </p>
+                        <DownButton/>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+
+      
+</div>
+</div>
+    
+        
+
+
+
+
+
+<style>
+
+    .brand-assets{
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    .asset-and-buttons{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: start;
+        width: 100%;
+    }
+
+    .download-button{
+        display: flex;
+        width: fit-content;
+        padding: 10px 12px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.25rem;
+
+        border-radius: 5px;
+        border: 1px solid var(--line-gray);
+        background: var(--fill-gray);
+    }
+
+    .download-button:hover{
+        opacity: 0.6;
+
+    }
+
+
+    .logo-and-text{
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        align-items: center;
+        padding: 100px;
+    }
+
+    .asset-row{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 50px;
+        padding: 50px
+    }
+
+    .wordmark-logo{
+        display: flex;
+        width: 100%;
+        padding: 50px;
+        background: var(--fill-gray);
+        outline: 1px solid var(--line-gray);
+        outline-offset: -1px;
+        max-height: 230px;
+        justify-content: center;
+    }
+
+    .wordmark-logo.dark-bg{
+        width: 100%;
+        height: auto;
+        padding: 50px;
+        background: #000;
+        outline: 1px solid var(--line-gray);
+        outline-offset: -1px;
+        max-height: 230px;
+    }
+
+    .download-row{
+        display: flex;
+        flex-direction: row;
+        gap: 2rem
+    }
+
+    .wordmark-logo img {
+        max-height: 100%;
+        width: auto;
+        display: block;
+    }
+
+
+</style>
