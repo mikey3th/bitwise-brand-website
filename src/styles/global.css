@@ -61,6 +61,10 @@
     padding: 0;
 }
 
+body{
+    margin-bottom: 100px;
+}
+
 a{
     text-decoration: none;
     color: #010203;
@@ -120,7 +124,23 @@ p{
 }
 
 
-a:hover{
+.download-button{
+    display: flex;
+    width: fit-content;
+    padding: 10px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.25rem;
+
+    border-radius: 5px;
+    border: 1px solid var(--line-gray);
+    background: var(--fill-gray);
+}
+
+.download-button:hover{
+     opacity: 0.6;
+
 }
 
 
@@ -130,6 +150,18 @@ a:hover{
 .no-background{
     box-sizing: border-box;
     padding: 5rem 0rem;
+    height: 100%;
+    gap: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    grid-column: 3;
+    grid-row: 4;
+}
+
+.no-background.no-padding{
+    box-sizing: border-box;
+    padding: 0rem 0rem;
     height: 100%;
     gap: 100px;
     width: 100%;

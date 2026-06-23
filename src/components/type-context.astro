@@ -1,40 +1,60 @@
 ---
 
 import '../styles/global.css'
-import DownButton from '../components/down-button.astro'
 
 ---
 
 
 <div>
     <div class="type-assets">
-        <div class="type-row">
+
+        <div class="asset-row">
 
             {/* PP Neue Montreal */}
-            <div class="asset-and-buttons"> 
-                <div class="type-specimen">
-                    
-                </div>
 
-                <p class="paragraph-mono"> Bitwise Word-Mark dark </p>
-                        
-                <div class="download-row">      
-                    <a href="/bitwise-logo.svg" download="bitwise-logo.svg" class="download-button"> 
-                        <p> SVG </p>
-                        <DownButton/>
-                    </a>
-                    <a href="/bitwise-logo.png" download="bitwise-logo.svg" class="download-button"> 
-                        <p> PNG </p>
-                        <DownButton/>
-                    </a>
-                </div>
+            <div class="asset-and-buttons"> 
+
+                <div class="type-specimen"> 
+                    <p class="pp-montreal"> PP Neue Montreal </p>
+                    <p class="pp-montreal-body">
+                        Bitwise is a trusted partner to investors, financial advisors, family offices, and institutions looking  to understand and
+                        access crypto.
+                    </p>
+                    <a class="download-button">  Primary Font </a> 
+                </div> 
+
+            </div>
+
+            <div class="asset-and-buttons"> 
+
+                <div class="type-specimen"> 
+                    <p class="items-light"> Items Light </p>
+                    <p class="items-body">
+                       Crypto Funds Backed by <em> Crypto Specialists </em>
+                    </p>
+                    <a class="download-button">  Header Font </a> 
+                </div> 
+
+            </div>
+
+            <div class="asset-and-buttons"> 
+
+                <div class="type-specimen last"> 
+                    <p class="pp-mono-header"> PP Neue Montreal Mono </p>
+                    <p class="pp-mono-body">
+                        $11B AUM <br>
+                        70+Investment products <br>
+                        200+Employees <br>
+                        5,000+ Wealth teams <br>
+                    </p>
+                    <a class="download-button">  Data Font </a> 
+                </div> 
+
             </div>
 
 
         </div>
-
-      
-</div>
+    </div>
 </div>
     
         
@@ -45,88 +65,105 @@ import DownButton from '../components/down-button.astro'
 
 <style>
 
-    .brand-assets{
-        display: flex;
-        flex-direction: column;
-        gap: 4rem;
-    }
 
-    .asset-and-buttons{
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        align-items: start;
-        width: 100%;
-    }
-
-    .download-button{
-        display: flex;
-        width: fit-content;
-        padding: 10px 12px;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        font-size: 1.25rem;
-
-        border-radius: 5px;
-        border: 1px solid var(--line-gray);
-        background: var(--fill-gray);
-    }
-
-    .download-button:hover{
-        opacity: 0.6;
-
-    }
-
-
-    .logo-and-text{
-        display: flex;
-        flex-direction: column;
-        gap: 50px;
-        align-items: center;
-        padding: 100px;
-    }
-
-    .asset-row{
+    .asset-row {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         gap: 50px;
-        padding: 50px
+        padding: 0px;
+        /* Ensures the row stretches nicely if the wrapper has a set height */
+        align-items: stretch; 
     }
 
-    .wordmark-logo{
+    .asset-and-buttons {
         display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding: 0px;
+        flex: 1;
+    }
+
+    .type-specimen {
+        display: flex;
+        flex-direction: column;
+        /* space-between pushes the button to the bottom beautifully */
+        justify-content: space-between; 
+        gap: 30px;
+        align-items: start;
         width: 100%;
         padding: 50px;
-        background: var(--fill-gray);
-        outline: 1px solid var(--line-gray);
-        outline-offset: -1px;
-        max-height: 230px;
-        justify-content: center;
+        border-right: 1px solid #D7DBDF;
+        
+        /* THIS IS THE FIX: Tells the inner div to expand vertically to fill the parent */
+        flex: 1; 
     }
 
-    .wordmark-logo.dark-bg{
-        width: 100%;
-        height: auto;
-        padding: 50px;
-        background: #000;
-        outline: 1px solid var(--line-gray);
-        outline-offset: -1px;
-        max-height: 230px;
-    }
-
-    .download-row{
+    .type-specimen.last {
         display: flex;
-        flex-direction: row;
-        gap: 2rem
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 30px;
+        align-items: start;
+        width: 100%;
+        padding: 50px;
+        border-right: 0px;
+        
+        /* THIS IS THE FIX: Tells the inner div to expand vertically to fill the parent */
+        flex: 1; 
     }
 
-    .wordmark-logo img {
-        max-height: 100%;
-        width: auto;
-        display: block;
+
+    .download-button:hover{
+        opacity: 100%
+
+    }
+
+
+    p{
+        text-align: left;
+    }
+
+
+
+    .pp-montreal{
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 2rem;
+    }
+
+    .items-light{
+    font-size: 3rem;
+    font-weight: 300;
+    font-family: "Items";
+    line-height: 2rem;
+    }
+
+    .items-body{
+    font-size: 2rem;
+    font-weight: 300;
+    font-family: "Items";
+    }
+
+
+    .pp-mono-header{
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: "PP Neue Montreal Mono";
+    text-transform: uppercase;
+    letter-spacing: .10em;
+    line-height: 2rem;
+    }
+
+    .pp-mono-body{
+    font-size: 1rem;
+    line-height: 2rem;
+    font-weight: 300;
+    font-family: "PP Neue Montreal Mono";
+    text-transform: uppercase;
     }
 
 
 </style>
+
+
