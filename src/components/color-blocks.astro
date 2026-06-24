@@ -1,0 +1,157 @@
+---
+
+import '../styles/global.css'
+
+---
+
+
+<div>
+    <div class="type-assets">
+
+        <div class="asset-row">
+
+                <div class="color-specimen"> 
+                    <div class="color-block green"> </div>
+                    <p class="pp-mono-header"> Green </p>
+                    <p class="pp-mono-body"> #39DB80 </p>
+
+                </div> 
+
+
+                <div class="color-specimen"> 
+                    <div class="color-block black"> </div>
+                    <p class="pp-mono-header"> Black </p>
+                    <p class="pp-mono-body"> #000000 </p>
+                </div> 
+
+
+                <div class="color-specimen"> 
+                    <div class="color-block gray"> </div>
+                    <p class="pp-mono-header"> Gray </p>
+                    <p class="pp-mono-body"> #D7DBDF </p>
+                </div> 
+
+
+                <div class="color-specimen last"> 
+                    <div class="color-block white"> </div>
+                    <p class="pp-mono-header"> White </p>
+                    <p class="pp-mono-body"> #FFFFFF </p>
+                </div> 
+
+        </div>
+    </div>
+</div>
+    
+        
+
+
+
+
+
+<style>
+
+
+    .asset-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 0px;
+        /* Ensures the row stretches nicely if the wrapper has a set height */
+        align-items: stretch; 
+    }
+
+
+    .color-specimen {
+        display: flex;
+        flex-direction: column;
+        /* space-between pushes the button to the bottom beautifully */
+        justify-content: space-between; 
+        gap: 30px;
+        align-items: start;
+        width: 100%;
+        padding: 50px;
+        border-right: 1px solid #D7DBDF;
+        
+        /* THIS IS THE FIX: Tells the inner div to expand vertically to fill the parent */
+        flex: 1; 
+    }
+
+
+    .color-specimen.last {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 30px;
+        width: 100%;
+        padding: 50px;
+        border-right: 0px;
+        
+        /* THIS IS THE FIX: Tells the inner div to expand vertically to fill the parent */
+        flex: 1; 
+    }
+
+
+    .color-block{
+        background-color: #39DB80;
+        width: 100%;
+        height: 235px;
+        border: 1px solid #D7DBDF;
+    }
+
+
+    .color-block.black{
+        background-color: #000000;
+        width: 100%;
+        height: 235px;
+        border: 1px solid #D7DBDF;
+    }
+
+
+    .color-block.gray{
+        background-color: #D7DBDF;
+        width: 100%;
+        height: 235px;
+        border: 1px solid #D7DBDF;
+    }
+
+    .color-block.white{
+        background-color: #FFFFFF;
+        width: 100%;
+        height: 235px;
+        border: 1px solid #D7DBDF;
+    }
+
+
+    .download-button:hover{
+        opacity: 100%
+
+    }
+
+
+    p{
+        text-align: left;
+    }
+
+
+    .pp-mono-header{
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: "PP Neue Montreal Mono";
+    text-transform: uppercase;
+    letter-spacing: .10em;
+    line-height: 2rem;
+    }
+
+    .pp-mono-body{
+    font-size: 1rem;
+    line-height: 3rem;
+    font-weight: 500;
+    font-family: "PP Neue Montreal Mono";
+    text-transform: uppercase;
+    }
+
+
+</style>
+
+
