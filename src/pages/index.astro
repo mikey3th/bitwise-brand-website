@@ -44,10 +44,17 @@ import ColorBlocks from "../components/color-blocks.astro"
 				<div class="vertical-borders right"> </div>
 				<div class="content">
 					<IntroSection/>
+					<div class="quick-links">
+						<a href="#logo" class="hover-light"> Logo</a>
+						<div class="vertical-line"> </div>
+						<a href="#typography" class="hover-light"> Typography</a>
+						<div class="vertical-line"> </div>
+						<a href="#color" class="hover-light"> Colors</a>
+					</div>
 				</div>
 			</div>
 		
-			<div class="grid-container">
+			<div class="grid-container" id="logo">
 				<div class="horizontal-borders top"></div>
 				<div class="vertical-borders left"> </div>
 				<div class="vertical-borders right"> </div>
@@ -65,7 +72,7 @@ import ColorBlocks from "../components/color-blocks.astro"
 				</div>
 			</div>
 
-			<div class="grid-container">
+			<div class="grid-container" id="typography">
 				<div class="horizontal-borders top"></div>
 				<div class="vertical-borders left"> </div>
 				<div class="vertical-borders right"> </div>
@@ -84,7 +91,7 @@ import ColorBlocks from "../components/color-blocks.astro"
 			</div>
 
 
-			<div class="grid-container">
+			<div class="grid-container" id="color">
 				<div class="horizontal-borders top"></div>
 				<div class="vertical-borders left"> </div>
 				<div class="vertical-borders right"> </div>
@@ -198,7 +205,31 @@ import ColorBlocks from "../components/color-blocks.astro"
 
 }
 
+
+
+.quick-links{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    background: rgba(0, 0, 0, 0.02);
+    backdrop-filter: blur(1px);
+    align-items: center;
+    border-top: 1px solid #D7DBDF;
+}
+
+
+
+.vertical-line{
+    border-left: 1px solid #D7DBDF;
+    height: 120px;
+}
+
+
 /* --- GRID END --- */
 
 
 </style>
+
+
+

@@ -1,6 +1,7 @@
 ---
 
 import '../styles/global.css'
+import ClipboardIcon from '../components/clipboard-icon.astro'
 
 ---
 
@@ -11,7 +12,9 @@ import '../styles/global.css'
         <div class="asset-row">
 
                 <div class="color-specimen"> 
-                    <div class="color-block green"> </div>
+                    <div class="color-block green"> 
+                        <span class="hex-copy" data-hex="#39DB80"><ClipboardIcon/></span>
+                    </div>
                     <p class="pp-mono-header"> Green </p>
                     <p class="pp-mono-body"> #39DB80 </p>
 
@@ -19,21 +22,27 @@ import '../styles/global.css'
 
 
                 <div class="color-specimen"> 
-                    <div class="color-block black"> </div>
+                    <div class="color-block black"> 
+                        <span class="hex-copy" data-hex="#000000"><ClipboardIcon/></span>    
+                    </div>
                     <p class="pp-mono-header"> Black </p>
                     <p class="pp-mono-body"> #000000 </p>
                 </div> 
 
 
                 <div class="color-specimen"> 
-                    <div class="color-block gray"> </div>
+                    <div class="color-block gray">
+                        <span class="hex-copy" data-hex="#D7DBDF"><ClipboardIcon/></span>
+                    </div>
                     <p class="pp-mono-header"> Gray </p>
                     <p class="pp-mono-body"> #D7DBDF </p>
                 </div> 
 
 
                 <div class="color-specimen last"> 
-                    <div class="color-block white"> </div>
+                    <div class="color-block white"> 
+                        <span class="hex-copy dark" data-hex="FFFFFF"><ClipboardIcon/></span>
+                    </div>
                     <p class="pp-mono-header"> White </p>
                     <p class="pp-mono-body"> #FFFFFF </p>
                 </div> 
@@ -41,6 +50,31 @@ import '../styles/global.css'
         </div>
     </div>
 </div>
+
+
+<script>
+    document.querySelectorAll(".hex-copy").forEach((el) => {
+        if (!(el instanceof HTMLElement)) return;
+
+        el.addEventListener("click", async () => {
+            const hex = el.dataset.hex;
+            if (!hex) return;
+
+            try {
+                await navigator.clipboard.writeText(hex);
+                const original = el.textContent;
+                el.textContent = "Copied";
+                el.classList.add("copied");
+                setTimeout(() => {
+                    el.textContent = original;
+                    el.classList.remove("copied");
+                }, 1000);
+            } catch (err) {
+                console.error("Copy failed:", err);
+            }
+        });
+    });
+</script>
     
         
 
@@ -56,7 +90,6 @@ import '../styles/global.css'
         flex-direction: row;
         justify-content: space-around;
         padding: 0px;
-        /* Ensures the row stretches nicely if the wrapper has a set height */
         align-items: stretch; 
     }
 
@@ -64,15 +97,12 @@ import '../styles/global.css'
     .color-specimen {
         display: flex;
         flex-direction: column;
-        /* space-between pushes the button to the bottom beautifully */
         justify-content: space-between; 
         gap: 30px;
         align-items: start;
         width: 100%;
         padding: 50px;
         border-right: 1px solid #D7DBDF;
-        
-        /* THIS IS THE FIX: Tells the inner div to expand vertically to fill the parent */
         flex: 1; 
     }
 
@@ -86,8 +116,6 @@ import '../styles/global.css'
         width: 100%;
         padding: 50px;
         border-right: 0px;
-        
-        /* THIS IS THE FIX: Tells the inner div to expand vertically to fill the parent */
         flex: 1; 
     }
 
@@ -97,6 +125,12 @@ import '../styles/global.css'
         width: 100%;
         height: 235px;
         border: 1px solid #D7DBDF;
+        position: relative;
+        display: flex;
+        align-items: end;
+        justify-content: end;
+        padding: 20px;
+
     }
 
 
@@ -149,6 +183,54 @@ import '../styles/global.css'
     font-weight: 500;
     font-family: "PP Neue Montreal Mono";
     text-transform: uppercase;
+    }
+
+
+
+    .hex-copy {
+    opacity: 0;
+    cursor: pointer;
+    padding: 10px 10px;
+    color: white;
+    font-family: "PP Neue Montreal Mono";
+    transition: opacity 0.15s ease;
+    user-select: none;
+    background-color: #ffffff47;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }   
+
+    .hex-copy.dark {
+    opacity: 0;
+    cursor: pointer;
+    padding: 10px 10px;
+    color: white;
+    font-family: "PP Neue Montreal Mono";
+    transition: opacity 0.15s ease;
+    user-select: none;
+    background-color: #00000047;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }  
+
+    .color-block:hover .hex-copy {
+        opacity: 1;
+    }
+
+    .hex-copy.copied {
+        opacity: 1;
+        font-family: "PP Neue Montreal Mono";
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: white;
     }
 
 
